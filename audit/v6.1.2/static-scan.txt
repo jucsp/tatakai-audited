@@ -1,0 +1,38 @@
+# Escaneo de patrones en líneas añadidas (excluye src/locales y package-lock.json)
+# patrón: eval|new Function|atob|btoa|fromCharCode|child_process|exec(|spawn(|\xNN|unescape|document.write|innerHTML=|dangerouslySetInnerHTML|WebSocket(|sendBeacon|clipboard|crypto.subtle
+b/src/lib/community/translationDocument.ts: +  if (isHtml) body.innerHTML = content;
+b/src/pages/profile/PlaylistPage.tsx: +                    <Button variant="ghost" size="icon" onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/p/${playlist.share_slug || playlist.id}`); toast.success(uiI18n.t('app.link_copied_88fe9d21')); }} className="rounded-full w-10 h-10 hover:bg-background/80">
+b/src/pages/profile/PlaylistPage.tsx: +                    <Button onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/p/${editShareSlug}`); toast.success(uiI18n.t('app.link_copied_c2e98476')); }} className="shrink-0">
+b/src/pages/profile/PublicPlaylistPage.tsx: +            <Button variant="outline" onClick={() => { navigator.clipboard.writeText(shareUrl); toast.success(uiI18n.t('app.link_copied_c2e98476')); }} className="gap-2">
+b/src/pages/profile/PublicPlaylistPage.tsx: +              <Button variant="outline" onClick={() => { navigator.clipboard.writeText(embedCode); toast.success(uiI18n.t('app.embed_code_copied_4eeede71')); }} className="gap-2">
+
+# Strings >=120 chars base64-like:
+0
+
+# Hosts en URLs añadidas
+      8 https://tatakai.me
+      4 https://proxy.invalid
+      4 https://github.com
+      3 https://discord.gg
+      2 https://tatakai.test
+      2 https://party.trycloudflare.com
+      2 https://api.tatakai.me
+      1 https://platform.openai.com
+      1 https://party.trycloudflare.com.evil.test
+      1 https://mangabaka.org
+      1 https://huggingface.co
+      1 https://host.trycloudflare.com
+      1 https://graphql.anilist.co
+      1 https://example.test
+      1 https://elevenlabs.io
+      1 https://developer.chrome.com
+      1 https://cdn.test
+      1 https://cdn.myanimelist.net
+      1 https://api.jikan.moe
+      1 https://...
+      1 http://party.trycloudflare.com
+      1 http://192.168.1.10
+      1 http://127.0.0.1
+
+# resolved fuera de registry.npmjs.org en lockfile:
+0

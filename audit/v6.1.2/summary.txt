@@ -1,0 +1,27 @@
+# Evidencia auditoría v6.1.2 — generada 2026-10-16T11:50:53-03:00
+base=90977f05d8c2896de271d8d9ea78909b37402abf target=4ae53514049dbeb0a2ab5cbe01397746dcc0c84f
+
+## Commits
+4ae53514049dbeb0a2ab5cbe01397746dcc0c84f 2026-10-15 23:13:53 +0530 Snozxyx Keep Tatakai release notes independent and remove obsolete work plans [skip ci]
+9cd0d2f8cde38757fd39249348e33d6cb882e036 2026-10-15 23:01:21 +0530 Snozxyx Release Tatakai 6.1.2 with community rewards, analytics and reliability fixes
+4e1633771215be243e4bf45721d5fbdee621f859 2026-10-15 18:21:43 +0530 Snozxyx feat(i18n): complete full-site internationalization with en, es, and ja catalogs
+4a7926992dddc83f06b2009b47ac8d2c9ac6d0fe 2026-10-15 16:02:16 +0530 Snozxyx Fix party tunnel playback, profile totals and AppImage output errors
+
+## Diffstat
+ 611 files changed, 37055 insertions(+), 9722 deletions(-)
+
+## Áreas críticas sin cambios
+IDENTICO  .github
+IDENTICO  desktop/services/update-manager.cjs
+IDENTICO  desktop/runtime/share-tunnel
+IDENTICO  desktop/runtime/extension
+IDENTICO  desktop/runtime/home-server
+IDENTICO  src/core/analytics
+IDENTICO  src/integrations/supabase/client.ts
+
+## Cambios en desktop/
+ desktop/main.cjs                             |  1 +
+ desktop/preload.cjs                          |  6 +++++-
+ desktop/runtime/proxy/local-proxy-server.cjs |  3 ---
+ desktop/services/stdio-guards.cjs            | 15 +++++++++++++++
+ 4 files changed, 21 insertions(+), 4 deletions(-)
