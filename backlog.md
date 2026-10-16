@@ -57,11 +57,12 @@ Fork de auditoría de seguridad sobre `Snozxyx/Tatakai` para asegurar control so
 - **Criterios de Aceptación:**
   - Creación de issues de notificación sin disparar builds.
 
-### HU-TAT-06: Pipeline de Build, Release y Empaquetado RPM
+### HU-TAT-06: Pipeline Automatizado de Build, Release y Empaquetado RPM
 - **ID:** HU-TAT-06
 - **Prioridad:** Alta
 - **Estimación:** 5 SP
-- **Descripción:** Replicar `.github/workflows/build.yml` en el fork (REQ-A1, REQ-A2). Agregar target `rpm` en `electron-builder` para Fedora/KDE (REQ-A10) con firma GPG. Disparo controlado únicamente por `workflow_dispatch` o tag `vX.Y.Z-audited` con aprobación del environment `release` (REQ-A4).
+- **Descripción:** Replicar `.github/workflows/build.yml` en el fork (REQ-A1, REQ-A2) para compilar y publicar automáticamente en cada push/merge a la rama principal del fork (`main` o `audited`). Agregar target `rpm` en `electron-builder` para Fedora/KDE (REQ-A10) con firma GPG. La única acción manual será la decisión del usuario dentro de la app de descargar e instalar.
 - **Criterios de Aceptación:**
+  - Publicación automatizada en GitHub Releases del fork ante push en `main` / `audited`.
   - Generación de artefactos para Linux (AppImage, deb, rpm) y Windows/macOS según corresponda.
   - Archivos `latest-*.yml` apuntando al fork.
