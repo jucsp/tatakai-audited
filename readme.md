@@ -1,3 +1,33 @@
+> **Este es un fork de auditoría de [Snozxyx/Tatakai](https://github.com/Snozxyx/Tatakai). No agrega funcionalidades nuevas.** Su único propósito es aumentar la seguridad: cada versión se revisa antes de incorporarse y la aplicación **no se actualiza sola**; te avisa cuando hay una versión nueva y solo la descarga si tú lo confirmas. Las descargas provienen de este repositorio, no del original.
+
+| | |
+| --- | --- |
+| **Versión auditada** | [`v6.1.1`](https://github.com/Snozxyx/Tatakai/releases/tag/v6.1.1) (commit `90977f0`) |
+| **Fecha de la auditoría** | 2026-10-15 |
+| **Informe de auditoría** | [`AUDIT.md`](AUDIT.md) |
+| **Cambios respecto del original** | [`UPSTREAM.md`](UPSTREAM.md) (commits `audit-fork:`) |
+| **Repositorio del fork** | [jucsp/tatakai-audited](https://github.com/jucsp/tatakai-audited) |
+| **Autor original** | [Snozxyx](https://github.com/Snozxyx) y colaboradores de [Tatakai](https://github.com/Snozxyx/Tatakai) — todo el mérito de la aplicación es suyo |
+| **Licencia** | [Mozilla Public License 2.0](LICENSE), la misma del proyecto original |
+
+### Cómo verificar una descarga
+
+Descarga los instaladores **solo** desde los [Releases de este fork](https://github.com/jucsp/tatakai-audited/releases). Cada release publica el archivo `latest-*.yml` (`latest-linux.yml`, `latest.yml` para Windows, `latest-mac.yml`) con el hash `sha512` de cada instalador.
+
+```bash
+# 1. Calcula el sha512 (en base64, el formato que usa latest-*.yml)
+openssl dgst -sha512 -binary Tatakai-X.Y.Z-linux-x86_64.AppImage | base64 -w0; echo
+
+# 2. Compáralo con el campo sha512 del mismo archivo en latest-linux.yml
+grep -A2 'Tatakai-X.Y.Z-linux-x86_64.AppImage' latest-linux.yml
+```
+
+Si los valores no coinciden, **no ejecutes el archivo**. Cuando el pipeline del fork publique checksums firmados con la clave del propietario, la clave pública y el procedimiento de verificación de firma quedarán documentados en [`AUDIT.md`](AUDIT.md).
+
+Los problemas de la aplicación en sí deben reportarse al [proyecto original](https://github.com/snozxyx/tatakai/issues); este fork solo atiende temas de auditoría y del actualizador.
+
+---
+
 <div align="center">
   <img
     src="public/assets/logo/tatakaibanner.png"
